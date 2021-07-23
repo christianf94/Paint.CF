@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Christian Flores"/>
+    <meta name="description" content="Reliza un dibujo en canvas">
+    <link rel="shortcut icon" href="https://www.seekpng.com/png/full/235-2352471_picture-paint-brush-icon-circle.png"> 
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Arte En Cada Click</title>
+</head>
+<body>
+    <section class="contenedor">
+        <div  class="titulo animate__animated animate__fadeIn animate__slow	2s ">
+            <h1>Realiza tu dibujo</h1>
+        </div>
+        <div class="informacion">
+            <h2>Instrucciones</h2>
+            <div class="instrucciones">
+                <article>
+                    <h2>Teclas</h2>
+                    <p>Reliza trazos moviendo las teclas "W" (&#11014;), "S" (&#11015;), "A" (&#11013;) y "D" (&#10145;) o usa el raton.</p>
+                </article>
+                <article>
+                    <h2>Mouse</h2>
+                    <p>Reliza trazos con el movimiento del raton (&#x1f5b1;).</p>
+                    <p></p>Click Izquierdo para inicar un trazo y soltar para terminarlo.</p>
+                </article>
+                <p>Diverte a cada click!</p>
+                <input type="button" value="Aceptar" id="">
+            </div>
+        </div>
+        <main>
+            <canvas class="animate__animated animate__bounceIn animate__slow 2s" height="500" width="1300" id="dibujo"></canvas>
+            <div class="panel  animate__animated animate__fadeInUp animate__slow 2s">
+                <div class="divPincel">
+                    <p>
+                        Tipo de pincel
+                        <select name="pincel" id="tipo_pincel" onchange="tipoDePincel()">
+                            <option value="Redondo">Redondo &#9899;</option>
+                            <option value="Cudrado">Cudrado &#11035;</option>
+                        </select>
+                    </p>
+                    <p>
+                        Grozor
+                        <input type="range" value="5" step="1" min="2" max="20" list="tickmarks" name="Trazo" id="text_trazo">
+                        <datalist id="tickmarks">
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="7"></option>
+                            <option value="8"></option>
+                            <option value="9"></option>
+                            <option value="10"></option>
+                            <option value="11"></option>
+                            <option value="12"></option>
+                            <option value="13"></option>
+                            <option value="14"></option>
+                            <option value="15"></option>
+                            <option value="16"></option>
+                            <option value="17"></option>
+                            <option value="18"></option>
+                            <option value="19"></option>
+                            <option value="20"></option>
+                        </datalist>
+                    </p>
+                </div>
+                <div class="divColores">
+                    <p>
+                        Color trazo
+                        <input type="color" value="#000" id="color_trazo">
+                    </p>
+                    <p>
+                        Color fondo
+                        <input type="color" value="#FFFFFF" id="color_fondo" onchange= "ColorDeFondo()"> 
+                    </p>
+                </div>
+                <div class="divOpciones">
+                    <p>
+                        Espacio del trazo
+                        <input type="number" value="10" min="1" max="20" id="velocidad_trazo">
+                    </p>
+                    <p>
+                        <input class="btn" type="button" value="Atras" onClick="undo()">
+                        <input class="btn" type="button" value="Borrar" onClick="borrar()">
+                        <input class="btn" type="button" value="Guardar" id="descargar">
+                    </p>
+                </div>
+            </main>
+        </div>
+    </section>
+    <footer>
+        <div class="author">
+            <p>Developed by: Christian Flores</p>
+        </div>
+        <div class="icons">
+            <a href="https://www.linkedin.com/in/christian-flores-603587164/"><img src="img/iconLN.png" alt="Linkedin"></a>
+            <a href="https://github.com/christianf94"><img src="img/iconGH.png" alt="GitHub"></a>
+            <a href="#"><img src="img/iconWS.png" alt="WebSite"></a>
+        </div>
+    </footer>
+    <!------------------------------------------------------------------------SCRIPTS---------------------------------------------------------->
+    <script src="Proyecto_Basico_Paint.js"></script>
+    </body>
+</html>

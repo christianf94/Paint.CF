@@ -1,0 +1,201 @@
+document.addEventListener("keydown", dibujar);
+var d = document.getElementById("dibujo")
+var t = document.getElementById("text_trazo")
+var c = document.getElementById("color_trazo")
+var v = document.getElementById("velocidad_trazo")
+var p = document.getElementById("tipo_pincel")
+var tt = document.getElementById("tipo_borde")
+var sa = document.getElementById("descargar")
+sa.addEventListener("click",guardar)
+d.addEventListener("mousedown",dibujando)
+d.addEventListener("mousemove",dibujando2)
+window.addEventListener("mouseup",dibujando3)
+d.style.cursor = "url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAGAAAACAAAAAUAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAADAAAABUAAAAcAAAAEwAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAwAAAAfAAAALwAAADgAAAAlAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMAAAAHwAAADUAAABFAAAASQAAADAAAAAXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAADAAAAB8AAAD/Itfg/yLX4P8AAABHAAAAKwAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAwAAAAfItfg/yLX4P8AAAD/Itfg/wAAADUAAAAcAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMAAAAHyLX4P8i1+D/Itfg/yLX4P8AAAD/AAAAHwAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAADAAAAB8i1+D/Itfg/yLX4P8i1+D/Itfg/wAAAB8AAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAwAAAAfItfg/yLX4P8i1+D/Itfg/yLX4P8AAAAfAAAADAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMAAAAHyLX4P8i1+D/Itfg/yLX4P8i1+D/AAAAHwAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAADAAAAB8i1+D/Itfg/yLX4P8i1+D/Itfg/wAAAB8AAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAwAAAAfItfg/yLX4P8i1+D/Itfg/yLX4P8AAAAfAAAADAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMAAAAHyLX4P8i1+D/Itfg/yLX4P8i1+D/AAAAHwAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAADAAAAB8i1+D/Itfg/yLX4P8i1+D/Itfg/wAAAB8AAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAwAAAAfItfg/yLX4P8i1+D/Itfg/yLX4P8AAAAfAAAADAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMAAAAHyLX4P8i1+D/Itfg/yLX4P8i1+D/AAAAHwAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAACgAAABwi1+D/Itfg/yLX4P8i1+D/Itfg/wAAAB8AAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAABgAAAAgAAAAYItfg/yLX4P8i1+D/Itfg/yLX4P8AAAAfAAAADAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAwAAAAVAAAAHCLX4P8i1+D/Itfg/yLX4P8i1+D/AAAAHwAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAMAAAAHwAAAC8AAAD/Itfg/yLX4P8i1+D/Itfg/wAAAB8AAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAAABwAAAA1AAAARSLX4P8AAAD/Itfg/yLX4P8AAAAVAAAADAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATGkxp/xpMaf8aTGn/Gkxp/yLX4P8AAAD/AAAAIQAAAAYAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABpMaf8aTGn/Gkxp/xpMaf8aTGn/AAAAUQAAADUAAAAaAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaTGn/Gkxp/xpMaf8aTGn/Gkxp/xpMaf8AAABIAAAALAAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABpMaf8aTGn/Gkxp/xpMaf8aTGn/Gkxp/wAAADUAAAAcAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGkxp/xpMaf8aTGn/Gkxp/xpMaf8aTGn/AAAAHwAAAAwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaTGn/Gkxp/xpMaf8aTGn/Gkxp/wAAABUAAAAMAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABpMaf8aTGn/Gkxp/xpMaf8AAAAPAAAABgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGkxp/xpMaf8AAAATAAAADAAAAAMAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABpMaf8aTGn/AAAABQAAAAUAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////////////////////////////////4////8P///+D////B////g////wf///4P///8H///+D////B////g////wf///4P///8H///+D////B////w////gf///wf///4H///+B////gf///4P///+H////n////z////8='), auto";
+var lienzo = d.getContext("2d");
+var dibujando = false;
+var pincel = "round";
+var bordes = "round";
+var historial = [];
+var index = -1;
+var canvaHeight = d.height;
+var canvaWidth = d.width;
+
+var punto =
+{
+    X: canvaWidth/2,
+    Y: canvaHeight/2,
+};
+
+var teclas = 
+{
+    UP: 87,
+    DOWN: 83,
+    LEFT: 65,
+    RIGHT: 68
+};  
+
+function ColorDeFondo()
+{
+    cf = document.getElementById("color_fondo").value
+    d.style.backgroundColor  = cf
+};
+
+function tipoDePincel(){
+    if(p.value == "Redondo"){
+        pincel ="round"
+        bordes = "round"
+    }
+
+    else if (p.value == "Cudrado"){
+        pincel ="square"
+        bordes = "bevel"
+    }
+};
+
+function dibujar(e) 
+{   
+    color = c.value;
+    trazo = parseInt(t.value);  
+    movimiento = parseInt(v.value);
+
+    switch(e.keyCode)
+    {   
+        case teclas.UP:
+            dibujarLineas(color, trazo, pincel, bordes, punto.X, punto.Y, punto.X, punto.Y - movimiento)
+            punto.Y = punto.Y - movimiento;
+            push_historial()
+        break;
+
+        case teclas.DOWN:
+            dibujarLineas(color, trazo, pincel, bordes, punto.X, punto.Y, punto.X, punto.Y + movimiento)
+            punto.Y = punto.Y  + movimiento;
+            push_historial()
+        break;
+        
+        case teclas.LEFT:
+            dibujarLineas(color, trazo, pincel, bordes, punto.X, punto.Y, punto.X - movimiento, punto.Y)
+            punto.X = punto.X - movimiento;
+            push_historial()
+        break;
+
+        case teclas.RIGHT:
+            dibujarLineas(color, trazo, pincel, bordes, punto.X, punto.Y, punto.X + movimiento, punto.Y)
+            punto.X = punto.X + movimiento;
+            push_historial()
+        break;
+
+        default:
+        
+    }
+};
+
+function dibujando (e){
+    punto.X = e.offsetX;
+    punto.Y = e.offsetY;
+    dibujando = true;
+};
+
+function dibujando2 (e){
+    color = c.value;
+    trazo = parseInt(t.value);  
+    if ( dibujando === true) {
+        dibujarLineas(color,trazo, pincel, bordes, punto.X, punto.Y, e.offsetX, e.offsetY);
+        punto.X = e.offsetX;
+        punto.Y = e.offsetY;
+        push_historial()
+    }
+};
+
+function dibujando3 (e){
+    color = c.value;
+    trazo = parseInt(t.value);  
+    if ( dibujando === true) {
+        dibujarLineas(color,trazo, pincel, bordes, punto.X, punto.Y, e.offsetX, e.offsetY);
+        punto.X = e.offsetX;
+        punto.Y = e.offsetY;
+        dibujando = false;
+    }
+};
+
+
+d.addEventListener("touchstart", function (e) {
+    mousePos = getTouchPos(d, e);
+    var touch = e.touches[0];
+    var mouseEvent = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+    });
+    d.dispatchEvent(mouseEvent);
+}, false);
+
+d.addEventListener("touchend", function (e) {
+    var mouseEvent = new MouseEvent("mouseup", {});
+    d.dispatchEvent(mouseEvent);
+}, false);
+
+d.addEventListener("touchmove", function (e) {
+    var touch = e.touches[0];
+    push_historial()
+    var mouseEvent = new MouseEvent("mousemove", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+});
+d.dispatchEvent(mouseEvent);
+}, false);
+
+function getTouchPos(canvasDom, touchEvent) {
+var rect = canvasDom.getBoundingClientRect();
+    return {
+        x: touchEvent.touches[0].clientX - rect.left,
+        y: touchEvent.touches[0].clientY - rect.top
+    };
+};
+
+function dibujarLineas(color, trazo, pincel, bordes, x_inicial, y_inicial, x_final, y_final)
+{   
+    lienzo.beginPath();
+    lienzo.strokeStyle = color;         
+    lienzo.lineWidth = trazo
+    lienzo.lineCap = pincel;
+    lienzo.lineJoin = bordes;
+    lienzo.moveTo(x_inicial,y_inicial);
+    lienzo.lineTo(x_final,y_final);
+    lienzo.stroke();
+    lienzo.closePath();
+};
+
+function borrar(){
+    lienzo.clearRect(0, 0, d.width, d.height);
+    lienzo.beginPath();
+    historial = [];
+    index = -1;
+    punto.X = d.width/2;
+    punto.Y = d.height/2;
+};
+
+function undo(){
+    if(index <= 0){
+        borrar();
+    }
+    else{
+        index--;
+        historial.pop();
+        lienzo.putImageData(historial[index], 0, 0);
+    }
+}
+
+function push_historial(){
+    index++
+    historial.push(lienzo.getImageData(0, 0, d.width, d.height))
+}
+
+function guardar(){
+    const link = document.createElement('a');
+    link.download= 'imagen.png';
+    link.href = d.toDataURL();
+    link.click();
+    link.delete;
+}
+
+
+

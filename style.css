@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body {
+    background: linear-gradient(90deg, rgba(113,53,242,1) 0%, rgba(142,100,235,1) 100%);
+}
+body .contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body .contenedor .titulo{
+    padding: 10px;
+    background-image: url(https://media.giphy.com/media/3o7TKIv052cFxGGBB6/giphy.gif);
+    background-size: cover;
+    background-position: center;
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    color: #ffffff47;
+    font-size: 3rem;
+    font-weight: normal;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 1px;
+    -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+}
+body  .contenedor .informacion{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body  .contenedor .informacion .instrucciones{
+    text-align: center;
+}
+body .contenedor main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+body .contenedor main canvas{
+    border-radius: 10px;
+    box-shadow: 0px -1px 18px -3px rgba(0,0,0,0.7);
+    background-color: white;
+}
+body .contenedor main canvas:hover{
+    box-shadow: 0px 0px 0px 5px #A0A0A0, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #2f3031, 5px 5px 15px 5px rgba(123,143,255,0);
+}
+body .contenedor main .panel{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    color: #fde10b;
+    border-radius: 20px;
+    font-weight: bold;  
+    border-style:solid;
+    background: #548DBF;
+    border-color: #383838;
+    margin: 5px 0 5px 0;
+} 
+body .contenedor main .panel .divPincel{     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body .contenedor main .panel .divPincel input{
+    color: #FFEB4D;
+}
+body .contenedor main .panel .divColores{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body .contenedor main .panel .divOpciones{     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body .contenedor main .panel .divPincel, .divColores, .divOpciones, p{     
+    margin:4px;
+}
+body .contenedor main .panel .divOpciones p .btn{
+    background-color: #D92387;
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;  
+    border-style: groove;
+    padding: 4px;
+}
+body .contenedor main .panel .divOpciones p .btn:hover{
+    background-color: #FFEB4D;
+    border-style: solid;
+}
+body .contenedor main .panel .divOpciones p .btn:active{
+    background-color: #F2D230;
+}
+body footer {
+    display: flex;
+    align-items: center;
+    color: #BEC7C7;
+    width: 100%;
+    margin-top: 10px;
+    background-color:#121317;
+}
+body footer .icons{
+    flex: 50%;
+    text-align: end;
+    margin-right: 20px;
+}
+body footer .icons a img{
+    width: 5%;
+}
+body footer .icons a img:hover{
+    background: #d9238798;
+    border-radius: 40px;
+}
+body footer .author{
+    font-family: -webkit-pictograph;
+    flex: 50%;
+}
