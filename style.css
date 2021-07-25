@@ -30,30 +30,21 @@ body .contenedor .titulo{
             user-select: none;
     text-align: center;
 }
-body  .contenedor .informacion{
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-body  .contenedor .informacion .instrucciones{
-    text-align: center;
-}
-body .contenedor main{
+body .contenedor .herramientas{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-body .contenedor main canvas{
+body .contenedor .herramientas canvas{
     border-radius: 10px;
     box-shadow: 0px -1px 18px -3px rgba(0,0,0,0.7);
     background-color: white;
 }
-body .contenedor main canvas:hover{
+body .contenedor .herramientas canvas:hover{
     box-shadow: 0px 0px 0px 5px #A0A0A0, inset 0px 10px 27px -8px #141414, inset 0px -10px 27px -8px #2f3031, 5px 5px 15px 5px rgba(123,143,255,0);
 }
-body .contenedor main .panel{
+body .contenedor .herramientas .panel{
     font-family: 'Yanone Kaffeesatz', sans-serif;
     display: flex;
     width: 80%;
@@ -67,28 +58,28 @@ body .contenedor main .panel{
     border-color: #383838;
     margin: 5px 0 5px 0;
 } 
-body .contenedor main .panel .divPincel{     
+body .contenedor .herramientas .panel .divPincel{     
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-body .contenedor main .panel .divPincel input{
+body .contenedor .herramientas .panel .divPincel input{
     color: #FFEB4D;
 }
-body .contenedor main .panel .divColores{    
+body .contenedor .herramientas .panel .divColores{    
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-body .contenedor main .panel .divOpciones{     
+body .contenedor .herramientas .panel .divOpciones{     
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-body .contenedor main .panel .divPincel, .divColores, .divOpciones, p{     
+body .contenedor .herramientas .panel .divPincel, .divColores, .divOpciones, p{     
     margin:4px;
 }
-body .contenedor main .panel .divOpciones p .btn{
+body .contenedor .herramientas .panel .divOpciones p .btn{
     background-color: #D92387;
     color: white;
     border-radius: 4px;
@@ -96,11 +87,11 @@ body .contenedor main .panel .divOpciones p .btn{
     border-style: groove;
     padding: 4px;
 }
-body .contenedor main .panel .divOpciones p .btn:hover{
+body .contenedor .herramientas .panel .divOpciones p .btn:hover{
     background-color: #FFEB4D;
     border-style: solid;
 }
-body .contenedor main .panel .divOpciones p .btn:active{
+body .contenedor .herramientas .panel .divOpciones p .btn:active{
     background-color: #F2D230;
 }
 body footer {
@@ -115,6 +106,7 @@ body footer .icons{
     flex: 50%;
     text-align: end;
     margin-right: 20px;
+    margin-top: 5px;
 }
 body footer .icons a img{
     width: 5%;
@@ -124,6 +116,52 @@ body footer .icons a img:hover{
     border-radius: 40px;
 }
 body footer .author{
-    font-family: -webkit-pictograph;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex: 50%;
+    font-weight:normal;
 }
+body footer:hover{
+    border-radius: 2px;
+    background-image: url(https://media.giphy.com/media/l3q2Cy90VMhfoA9BC/giphy.gif);
+    background-size: cover;
+    background-position: center;
+    background-clip: border-box;
+}
+
+.modal-contenido{
+    display: flex;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color:aqua;
+    width:30%;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+    border-width: 10px;
+}
+.modal-contenido article{
+    margin: 10px;
+}
+.modal{
+    background-color: rgba(0,0,0,.8);
+    position:fixed;
+    z-index: 1;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+  }
+  #miModal:target{
+    opacity:1;
+    pointer-events:auto;
+  }

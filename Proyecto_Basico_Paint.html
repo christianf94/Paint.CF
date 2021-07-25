@@ -13,28 +13,31 @@
     <link rel="stylesheet" href="style.css">
     <title>Arte En Cada Click</title>
 </head>
+
 <body>
     <section class="contenedor">
         <div  class="titulo animate__animated animate__fadeIn animate__slow	2s ">
             <h1>Realiza tu dibujo</h1>
         </div>
-        <div class="informacion">
-            <h2>Instrucciones</h2>
-            <div class="instrucciones">
+
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <h2>Instrucciones</h2>
                 <article>
                     <h2>Teclas</h2>
-                    <p>Reliza trazos moviendo las teclas "W" (&#11014;), "S" (&#11015;), "A" (&#11013;) y "D" (&#10145;) o usa el raton.</p>
+                    <p>Reliza trazos moviendo las teclas "W" (Arriba), "S" (Abajo), "A" (Izquierda) y "D" (Derecha).</p>
                 </article>
                 <article>
                     <h2>Mouse</h2>
                     <p>Reliza trazos con el movimiento del raton (&#x1f5b1;).</p>
                     <p></p>Click Izquierdo para inicar un trazo y soltar para terminarlo.</p>
                 </article>
-                <p>Diverte a cada click!</p>
-                <input type="button" value="Aceptar" id="">
-            </div>
+                <p>Diverte en cada click!</p>
+                <a href="#"><input class="btn" type="button" value="Aceptar"></a>
+            </div>  
         </div>
-        <main>
+
+        <main class="herramientas">
             <canvas class="animate__animated animate__bounceIn animate__slow 2s" height="500" width="1300" id="dibujo"></canvas>
             <div class="panel  animate__animated animate__fadeInUp animate__slow 2s">
                 <div class="divPincel">
@@ -90,6 +93,7 @@
                         <input class="btn" type="button" value="Atras" onClick="undo()">
                         <input class="btn" type="button" value="Borrar" onClick="borrar()">
                         <input class="btn" type="button" value="Guardar" id="descargar">
+                        <a href="#miModal"><input class="btn" type="button" value="Info"></a>
                     </p>
                 </div>
             </main>
